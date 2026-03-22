@@ -1,0 +1,12 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/vendetta/github/data_structures/projectile/cmake_install.cmake",
+		"/home/vendetta/github/data_structures/projectile/_deps/sfml-build/cmake_install.cmake",
+		"/home/vendetta/github/data_structures/projectile/_deps/sfml-build/src/SFML/cmake_install.cmake",
+		"/home/vendetta/github/data_structures/projectile/_deps/sfml-build/src/SFML/System/cmake_install.cmake",
+		"/home/vendetta/github/data_structures/projectile/_deps/sfml-build/src/SFML/Window/cmake_install.cmake",
+		"/home/vendetta/github/data_structures/projectile/_deps/sfml-build/src/SFML/Graphics/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -149,6 +149,36 @@ main (int argc, char *argv[]) {
   }
 
   uint32_t accuracy = (double) correct_types / all_types * 100;
-  std::cout << accuracy;
-  return 0;
+  std::cout << accuracy << '\n';
+
+  while (true) {
+        std::cout << "Type 'go' to enter new vector or exit: ";
+        std::string command;
+        std::cin >> command;
+
+        if (command == "exit") {
+            return 0;
+        }
+
+        if (command == "go") {
+            
+            Piece user_piece;
+            double value;
+            for (size_t i = 0; i < training_set[0].vec.size(); ++i) {
+                if (std::cin >> value) {
+                    user_piece.vec.push_back(value);
+                }
+            }
+
+            std::vector<Distance> user_distances;
+            for (const Piece& training_piece : training_set) {
+                Distance d;
+                d.type = training_piece.type;
+                d.distance = calculate_distance(user_piece, training_piece);
+                user_distances.push_back(d);
+            }
+
+            std::cout << "Result: " << get_type(user_distances, k) << '\n';
+        }
+    }
 }

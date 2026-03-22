@@ -1,0 +1,3 @@
+/home/vendetta/github/data_structures/projectile/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate.dir
+/home/vendetta/github/data_structures/projectile/build/_deps/sfml-subbuild/CMakeFiles/edit_cache.dir
+/home/vendetta/github/data_structures/projectile/build/_deps/sfml-subbuild/CMakeFiles/rebuild_cache.dir
