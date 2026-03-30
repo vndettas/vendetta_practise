@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/vendetta/github/data_structures/projectile/build/_deps/sfml-subbuild/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
