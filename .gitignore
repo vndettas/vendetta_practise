@@ -1,19 +1,27 @@
-# ===================== #
-# OS-Specific
-# ===================== #
+#*.class
+*.log
+*.jar
+*.war
+*.ear
+target/
+build/
+out/
+.gradle/
+.idea/
+*.iml
+.settings/
+.classpath
+.project
+bin/
+.DS_Store
+HELP.md
 .DS_Store
 Thumbs.db
 
-# ===================== #
-# IDEs & Editors
-# ===================== #
 .idea/
 .vscode/
 *.code-workspace
 
-# ===================== #
-# Build Artifacts
-# ===================== #
 build/
 build-*/
 CMakeFiles/
@@ -43,9 +51,6 @@ build.ninja
 .ninja_deps
 .ninja_log
 
-# ===================== #
-# Qt
-# ===================== #
 *.user
 *.user.*
 *.pro.user
@@ -55,24 +60,15 @@ build.ninja
 *.jsc
 *.rcc
 
-# ===================== #
-# Logs / Debug
-# ===================== #
 *.log
 *.out
 
-# ===================== #
-# Binaries
-# ===================== #
 *.exe
 *.dll
 *.so
 *.dylib
 *.app
 
-# ===================== #
-# Other
-# ===================== #
 /shelf/
 /httpRequests/
 /dataSources/
