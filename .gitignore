@@ -4,6 +4,8 @@
 *.war
 *.ear
 target/
+*.zip
+*.bat
 build/
 out/
 .gradle/
