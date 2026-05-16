@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Data Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <h1>Data generator</h1>
+
+    <form action="/dataGenerator" method="post">
+        <label>
+            <input type="number" name="numberOfEntries" placeholder="Number of entries" required>
+        </label>
+        <label>
+            <input type="text" name="locale" placeholder="Language (e.g. en, ru)" required>
+        </label>
+
+        <fieldset style="margin-top: 15px;">
+            <legend>Additional fields:</legend>
+            <label><input type="checkbox" name="additionalFields" value="UNIVERSITY"> University</label><br>
+            <label><input type="checkbox" name="additionalFields" value="ADDRESS"> Address</label><br>
+            <label><input type="checkbox" name="additionalFields" value="COUNTRYOFORIGIN"> Country of origin</label><br>
+            <label><input type="checkbox" name="additionalFields" value="COUNTRYOFRESIDENCE"> Country of residence</label><br>
+            <label><input type="checkbox" name="additionalFields" value="EMAIL"> Email</label><br>
+            <label><input type="checkbox" name="additionalFields" value="JOB"> Job</label><br>
+            <label><input type="checkbox" name="additionalFields" value="NATIONALITY"> Nationality</label><br>
+            <label><input type="checkbox" name="additionalFields" value="PHONE"> Phone</label>
+        </fieldset>
+
+        <button type="submit" style="margin-top: 15px;">submit</button>
+    </form>
+
+</main>
+<script src="index.js"></script>
+</body>
+</html>

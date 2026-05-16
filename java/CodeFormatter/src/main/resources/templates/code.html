@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Format Java Code</title>
+</head>
+<body>
+<main layout:fragment="content">
+
+    <div class="bg-neutral-900 rounded-lg shadow-lg p-8 max-w-5xl mx-auto border border-neutral-700">
+        <h2 class="text-2xl font-bold mb-6 text-yellow-300">Enter your code:</h2>
+
+        <form method="post" action="/TPOcodeFormatter/code">
+            <div class="mb-4">
+                    <textarea id="before" name="before" rows="8" required
+                              class="w-full p-4 bg-white text-black border border-gray-300 rounded font-mono focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                              th:text="${codeBefore != null ? codeBefore : ''}"
+                              placeholder="public class Example { ... }"></textarea>
+            </div>
+            <button type="submit" class="bg-yellow-300 hover:bg-yellow-400 text-black font-bold py-2 px-6 rounded transition duration-200 shadow-md">
+                Format Code
+            </button>
+        </form>
+
+        <div th:if="${codeAfter != null}" class="mt-10 pt-8 border-t border-neutral-700">
+            <h3 class="text-xl font-bold mb-4 text-yellow-300 text-center">Formatted Code Preview:</h3>
+
+            <div class="flex flex-col md:flex-row gap-6 mb-8 w-full">
+                <div class="flex-1 min-w-0 flex flex-col">
+                    <div class="text-center font-semibold mb-2 text-yellow-400">Before</div>
+                    <div class="border border-neutral-600 p-4 bg-neutral-800 overflow-x-auto flex-grow rounded">
+                        <pre class="font-mono text-sm text-yellow-100" th:text="${codeBefore}"></pre>
+                    </div>
+                </div>
+                <div class="flex-1 min-w-0 flex flex-col">
+                    <div class="text-center font-semibold mb-2 text-yellow-400">After</div>
+                    <div class="border border-neutral-600 p-4 bg-neutral-800 overflow-x-auto flex-grow rounded">
+                        <pre class="font-mono text-sm text-yellow-100" th:text="${codeAfter}"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-neutral-800 p-6 rounded-lg border border-neutral-600">
+                <h3 class="text-lg font-bold mb-4 text-yellow-300">Save this code</h3>
+                <form method="post" action="/TPOcodeFormatter/saveCode">
+                    <input type="hidden" name="before" th:value="${codeBefore}">
+
+                    <div class="mb-4">
+                        <label class="block font-bold mb-2 text-yellow-300" for="ID">Text ID:</label>
+                        <input type="text" id="ID" name="ID" required
+                               class="w-full md:w-1/3 p-2 bg-white text-black border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block font-bold mb-2 text-yellow-300">Duration (Min: 10s, Max: 90 days)</label>
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <div>
+                                <label class="text-sm text-yellow-300/80 block mb-1">Days:</label>
+                                <input type="number" name="days" value="0" min="0" max="90" class="w-16 p-2 bg-white text-black border border-gray-300 rounded text-center focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                            </div>
+                            <div>
+                                <label class="text-sm text-yellow-300/80 block mb-1">Hours:</label>
+                                <input type="number" name="hours" value="0" min="0" max="23" class="w-16 p-2 bg-white text-black border border-gray-300 rounded text-center focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                            </div>
+                            <div>
+                                <label class="text-sm text-yellow-300/80 block mb-1">Minutes:</label>
+                                <input type="number" name="minutes" value="0" min="0" max="59" class="w-16 p-2 bg-white text-black border border-gray-300 rounded text-center focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                            </div>
+                            <div>
+                                <label class="text-sm text-yellow-300/80 block mb-1">Seconds:</label>
+                                <input type="number" name="seconds" value="10" min="0" max="59" class="w-16 p-2 bg-white text-black border border-gray-300 rounded text-center focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="bg-yellow-300 hover:bg-yellow-400 text-black font-bold py-2 px-6 rounded transition duration-200 shadow-md">
+                        Save Code
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>
