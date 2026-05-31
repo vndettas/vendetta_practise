@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Link - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 min-h-screen flex flex-col items-center pt-10 text-gray-100 font-sans">
+
+<div class="w-full max-w-md flex justify-between items-center mb-6 px-2">
+    <a href="/" class="text-yellow-500 hover:text-yellow-400 font-bold transition duration-200" th:text="#{nav.create}">
+        &larr; Back to Create
+    </a>
+</div>
+
+<div class="bg-gray-800 p-8 rounded-xl shadow-2xl w-full max-w-md border border-gray-700">
+    <h2 class="text-2xl font-bold mb-6 text-white" th:text="#{nav.manage}">Manage Link</h2>
+
+    <div th:if="${param.error}" class="bg-red-900/50 border border-red-500 text-red-400 p-3 rounded mb-6 text-center" th:text="#{msg.error}">
+        Invalid name or password.
+    </div>
+
+    <form th:action="@{/manage}" method="post" class="space-y-5">
+        <div>
+            <label class="block text-sm font-medium text-gray-300 mb-1" th:text="#{form.name}">Name</label>
+            <input type="text" name="name" required="required"
+                   class="block w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:outline-none transition" />
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium text-gray-300 mb-1" th:text="#{form.password.req}">Password (leave empty if none)</label>
+            <input type="password" name="password"
+                   class="block w-full bg-gray-700 border border-gray-600 rounded p-2.5 text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 focus:outline-none transition" />
+        </div>
+        <button type="submit"
+                class="w-full bg-yellow-500 text-gray-900 font-bold py-3 px-4 rounded-lg hover:bg-yellow-400 transition duration-200 shadow-lg mt-2">
+            Login
+        </button>
+    </form>
+</div>
+</body>
+</html>
